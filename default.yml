@@ -1,12 +1,8 @@
 extends:
   - "eslint:recommended"
-  - "plugin:react/recommended"
-  - "plugin:jsx-a11y/recommended"
 
 parserOptions:
   ecmaVersion: 2017
-  ecmaFeatures:
-    jsx: true
   sourceType: "module"
 
 env:
@@ -15,10 +11,6 @@ env:
   es6: true
   jquery: true
   node: true
-
-plugins:
-  - react
-  - "jsx-a11y"
 
 # http://eslint.org/docs/rules/
 rules:
@@ -61,7 +53,7 @@ rules:
   # Best Practices
   accessor-pairs: 2
   block-scoped-var: 0
-  complexity: [2, 6]
+  complexity: [2, 10]
   consistent-return: 0
   curly: 2
   default-case: 0
@@ -160,7 +152,6 @@ rules:
   id-length: 0
   id-match: 0
   indent: [2, tab, {"SwitchCase": 1}]
-  jsx-quotes: [2, "prefer-double"]
   key-spacing: [2, {"beforeColon": false, "afterColon": true}]
   keyword-spacing: [2, {"before": true, "after": true}]
   linebreak-style: [2, unix]
@@ -228,37 +219,3 @@ rules:
   space-unary-ops: [2, {"words": false, "nonwords": false, "overrides": { "!": true }}]
   spaced-comment: [2, "always"]
   wrap-regex: 0
-
-  # Accessibility rules. https://github.com/evcohen/eslint-plugin-jsx-a11y
-  # Deprecated in v6.1.0 in favor of label-has-associated-control but we still want to require only for/id and not nesting.
-  jsx-a11y/label-has-for: [2, { "required": "id" } ]
-
-  # React plugins settings (https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules)
-  react/jsx-tag-spacing: [2, {"beforeClosing": "never"}]
-  react/jsx-pascal-case: 2
-  react/jsx-no-bind: 2
-  react/jsx-max-props-per-line: [2, {"maximum": 6}] # A high maximum to make sure it is always a smell when it occurs.
-  react/jsx-max-depth: [2, {"max": 8}] # A high maximum to make sure it is always a smell when it occurs.
-  react/jsx-indent-props: [2, "tab"]
-  react/jsx-indent: [2, "tab"]
-  react/jsx-first-prop-new-line: [2, "multiline"]
-  react/jsx-equals-spacing: 2
-  react/jsx-curly-spacing: [2, {"when": "always", "children": true}]
-  react/jsx-closing-bracket-location: [2, "line-aligned"]
-  react/jsx-boolean-value: [2, "always"]
-
-  react/void-dom-elements-no-children: 2
-  react/self-closing-comp: 2
-  react/require-default-props: 2
-  react/prefer-es6-class: 2
-  react/no-unused-state: 2
-  react/no-unused-prop-types: 2
-  react/no-this-in-sfc: 2
-  react/no-typos: 2
-  react/no-render-return-value: 2
-  react/no-redundant-should-component-update: 2
-  react/no-access-state-in-setstate: 2
-  react/forbid-foreign-prop-types: 2
-  react/default-props-match-prop-types: 2
-  react/button-has-type: 0 # See https://github.com/yannickcr/eslint-plugin-react/issues/1555
-  react/boolean-prop-naming: 2
